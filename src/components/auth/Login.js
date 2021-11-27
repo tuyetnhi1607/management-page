@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { loginAuthAction } from "../../redux/action/AuthAction";
 import { useNavigate } from "react-router";
+import Header from "../layout/Header";
 
 function Login(props) {
   const { login } = props;
   const history = useNavigate();
   const [loginState, setLoginState] = useState({});
-  console.log("login", loginState)
+  console.log("login", props)
   return (
     <div className="login">
       <form
@@ -15,6 +16,7 @@ function Login(props) {
           e.preventDefault();
           login(loginState, history);
         }}
+        className="login-form"
       >
         <input
           type="text"

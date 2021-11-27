@@ -26,6 +26,7 @@ const registerAuthAction = (useState, history) => {
 };
 
 const loginAuthAction = (useState, history) => {
+  console.log("hello i am login")
   return async (dispatch) => {
     await axios
       .post("/auth/login", useState)
@@ -53,6 +54,7 @@ const logoutAuthAction = (history) => {
           const { data } = res;
           console.log("logout", data);
           history("/");
+          
           dispatch({
             type: AuthActionType.LOGOUT_SUCCESS,
             payload: data,

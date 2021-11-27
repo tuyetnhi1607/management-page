@@ -4,20 +4,23 @@ import { Link } from "react-router-dom";
 import "./layout.scss";
 import { logoutAuthAction } from "../../redux/action/AuthAction";
 import { useNavigate } from "react-router";
+import Table from "../table/Table";
 
 function Header(props) {
   if (!localStorage.getItem("auth")) {
     const init = {
       isLogined: false,
       user: {
-        userName: "",
-        token: "",
+        data: {
+          userName: "",
+          token: "",
+        },
       },
     };
     localStorage.auth = JSON.stringify(init);
   }
-  const {user} = JSON.parse(localStorage.auth);
-  console.log("user", user)
+  const { user } = JSON.parse(localStorage.auth);
+  console.log("user", user);
   const history = useNavigate();
   const { logout } = props;
   return (
@@ -42,6 +45,7 @@ function Header(props) {
           >
             Logout
           </button>
+          <Table />
         </>
       )}
     </div>

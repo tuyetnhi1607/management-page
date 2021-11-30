@@ -1,0 +1,27 @@
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.4);
+    &-main{
+        background-color: aqua;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #ebee;
+        width: 80%;
+        &-header{
+            cursor: pointer;
+            text-align: right;
+            & > i{
+                color: rgb(255, 0, 0);
+                font-size: 36px;
+            }
+        }
+    }
+    
+}

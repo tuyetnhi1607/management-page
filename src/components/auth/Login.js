@@ -3,12 +3,13 @@ import { connect } from "react-redux";
 import { loginAuthAction } from "../../redux/action/AuthAction";
 import { useNavigate } from "react-router";
 import Header from "../layout/Header";
+import { Link } from "react-router-dom";
 
 function Login(props) {
   const { login } = props;
   const history = useNavigate();
   const [loginState, setLoginState] = useState({});
-  console.log("login", props)
+  console.log("login", props);
   return (
     <div className="login">
       <form
@@ -36,6 +37,9 @@ function Login(props) {
         />
         <button type="submit">Submit</button>
       </form>
+      <Link to="/register">
+        <button>Register</button>
+      </Link>
     </div>
   );
 }

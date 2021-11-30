@@ -8,12 +8,16 @@ import Table from "./components/table/Table";
 import Home from "./components/home/Home";
 
 function App() {
+  const { isLogined } = JSON.parse(localStorage.auth).user;
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<Home />}/>
-        <Route exact path="/login" element={<Login />}/>
-        <Route exact path="/register" element={<Register />}/>
+        {isLogined ? (
+          <Route exact path="/" element={<Home />} />
+        ) : (
+          <Route exact path="/" element={<Login />} />
+        )}
+        <Route exact path="/register" element={<Register />} />
       </Routes>
     </div>
   );

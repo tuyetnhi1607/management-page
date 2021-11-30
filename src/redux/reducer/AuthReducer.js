@@ -31,6 +31,7 @@ const authreducer = (state = authState, action) => {
             //     'Authorization'
             // ] = `Bearer ${action.payload.jwttoken}`;
             localStorage.auth = JSON.stringify(loginAuthState)
+            window.location.reload(true);
             return loginAuthState;
         case AuthActionType.LOGOUT_SUCCESS:
             const logoutState = {

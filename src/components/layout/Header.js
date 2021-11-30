@@ -25,29 +25,14 @@ function Header(props) {
   const { logout } = props;
   return (
     <div className="header">
-      <Link to="/">You</Link>
-      {!user.isLogined ? (
-        <>
-          <Link to="/login">
-            <button>Login</button>
-          </Link>
-          <Link to="/register">
-            <button>Register</button>
-          </Link>
-        </>
-      ) : (
-        <>
-          <div>{user.data.userName}</div>
-          <button
-            onClick={(e) => {
-              logout(history);
-            }}
-          >
-            Logout
-          </button>
-          <Table />
-        </>
-      )}
+      <div>{user.data.userName}</div>
+      <button
+        onClick={(e) => {
+          logout(history);
+        }}
+      >
+        Logout
+      </button>
     </div>
   );
 }

@@ -1,0 +1,7 @@
+.home{
+    display: flex;
+    &-main{
+        background-color: rgb(230, 15, 15);
+        flex: 1;
+    }
+}

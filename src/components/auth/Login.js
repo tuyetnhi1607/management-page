@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { loginAuthAction } from "../../redux/action/AuthAction";
 import { useNavigate } from "react-router";
-import Header from "../layout/Header";
 import { Link } from "react-router-dom";
 
 function Login(props) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import "./modal.scss";
 import "boxicons";
 import { connect } from "react-redux";
@@ -42,7 +42,6 @@ function Modal(props) {
           <i className="bx bxs-x-square"></i>
         </div>
         <div className="modal-body">
-    
             <input
               value={editState.name}
               type="text"

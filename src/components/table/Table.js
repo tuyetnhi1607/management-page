@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllProductAction, deleteProductAction } from "../../redux/action/ProductAction";
+import {
+  getAllProductAction,
+  deleteProductAction,
+} from "../../redux/action/ProductAction";
 import Modal from "../modal/Modal";
 import "./table.scss";
 
@@ -12,6 +15,7 @@ const initState = {
   price: "",
   sale: "",
 };
+
 
 function Table(props) {
   const [editState, setEditState] = useState({});
@@ -25,54 +29,54 @@ function Table(props) {
   }, []);
   const editHandle = (e) => {
     setEditState(e);
-    setType("EDIT")
-    document.getElementById("modal").style.display = "unset"
-  }
+    setType("EDIT");
+    document.getElementById("modal").style.display = "unset";
+  };
   const deleteHandle = (e) => {
-    deleteProduct(e, data.token)
-  }
+    deleteProduct(e, data.token);
+  };
   const handleCreate = () => {
     setEditState(initState);
-    setType("CREATE")
-    document.getElementById("modal").style.display = "unset"
-  }
+    setType("CREATE");
+    document.getElementById("modal").style.display = "unset";
+  };
   console.log("getall", props);
   return (
     <div className="table">
       {isLogined ? (
         <>
-        <button onClick={() =>handleCreate()}>Create</button>
-        <table>
-          <thead>
-            <tr>
-              <th>stt</th>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Image</th>
-              <th>Price</th>
-              <th>Sale</th>
-              <th>Detail</th>
-            </tr>
-          </thead>
-          <tbody>
-            {product.posts.map((item, i) => {
-              return (
-                <tr key={i}>
-                  <td>{i + 1}</td>
-                  <td>{item.name}</td>
-                  <td>{item.description}</td>
-                  <td>{item.image}</td>
-                  <td>{item.price}</td>
-                  <td>{item.sale}</td>
-                  <td>
-                    <button onClick={() => editHandle(item)}>Edit</button>
-                    <button onClick={() => deleteHandle(item)}>Delete</button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+          <button onClick={() => handleCreate()}>Create</button>
+          <table>
+            <thead>
+              <tr>
+                <th>stt</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Sale</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              {product.posts.map((item, i) => {
+                return (
+                  <tr key={i}>
+                    <td>{i + 1}</td>
+                    <td>{item.name}</td>
+                    <td>{item.description}</td>
+                    <td>{item.image}</td>
+                    <td>{item.price}</td>
+                    <td>{item.sale}</td>
+                    <td>
+                      <button onClick={() => editHandle(item)}>Edit</button>
+                      <button onClick={() => deleteHandle(item)}>Delete</button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </>
       ) : null}
       <Modal type={type} state={editState} />
@@ -92,11 +96,11 @@ const mapDispatchToProps = (dispatch) => {
     get: (token) => {
       dispatch(getAllProductAction(token));
     },
-    deleteProduct: (editState,token) => {
-      console.log("editStet", editState)
-      dispatch(deleteProductAction(editState,token));
+    deleteProduct: (editState, token) => {
+      console.log("editStet", editState);
+      dispatch(deleteProductAction(editState, token));
       // dispatch(getAllProductAction(token))
-    }
+    },
   };
 };
 

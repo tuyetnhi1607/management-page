@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import "./header.scss";
 import { logoutAuthAction } from "../../../redux/action/AuthAction";
-import { useNavigate } from "react-router";
-import Table from "../../table/Table";
+import { useNavigate } from "react-router-dom";
 import "boxicons";
 import avatar from "../../../assets/none-avatar.png";
 
 function Header(props) {
+  const ref = useRef();
+  const [name, setName] = useState("Home");
   if (!localStorage.getItem("auth")) {
     const init = {
       isLogined: false,
@@ -21,44 +21,56 @@ function Header(props) {
     };
     localStorage.auth = JSON.stringify(init);
   }
+  const handleDropdown = () => {
+    document.getElementById("dropdown").classList.toggle("active");
+  };
+  useEffect(() => {
+    document.addEventListener("click", (event) => {
+      if (ref.current && !ref.current.contains(event.target))
+        document.getElementById("dropdown").classList.remove("active");
+    });
+  }, []);
+  useEffect(() => {
+    if (window.location.pathname === "/products") setName("Products");
+    if (window.location.pathname === "/list-users") setName("List User");
+    if (window.location.pathname === "/setting") setName("Setting");
+    if (window.location.pathname === "/list-orders") setName("list Orders");
+    if (window.location.pathname === "/") setName("Home");
+  }, [window.location.pathname]);
   const { user } = JSON.parse(localStorage.auth);
   console.log("user", user);
   const history = useNavigate();
   const { logout } = props;
-  const handleDropdown = () => {
-    document.getElementById("dropdown").classList.toggle("active");
-  };
+
   return (
     <>
       <div className="header">
-        <div className="header-controler">
-          <i class="bx bx-left-indent"></i>
-        </div>
-        <div className="header-account" onClick={handleDropdown}>
+        <div className="header-name">{name}</div>
+        <div ref={ref} className="header-account" onClick={handleDropdown}>
+          <i className='bx bxs-bell-ring'></i>
           <img src={avatar} alt="" />
           <div>{user.data.userName}</div>
-          {/* <button
-          onClick={(e) => {
-            logout(history);
-          }}
-        >
-          Logout
-        </button> */}
+          {/* <i className='bx bxs-bell-ring'></i>
+          <i className='bx bx-palette'></i> */}
         </div>
       </div>
       <div className="dropdown" id="dropdown">
         <div className="dropdown-arrow"></div>
         <ul>
           <li>
-            <i class="bx bxs-user-badge"></i>
+            <i className="bx bxs-user-badge"></i>
             <span>Profile</span>
           </li>
           <li>
-            <i class="bx bx-wrench"></i>
+            <i className="bx bx-wrench"></i>
             <span>Setting</span>
           </li>
-          <li>
-            <i class="bx bx-log-out-circle"></i>
+          <li
+            onClick={(e) => {
+              logout(history);
+            }}
+          >
+            <i className="bx bx-log-out-circle"></i>
             <span>Logout</span>
           </li>
         </ul>

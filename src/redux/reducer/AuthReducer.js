@@ -18,18 +18,12 @@ const authreducer = (state = authState, action) => {
             const newState = {
                 user: action.payload
             }
-            // axios.defaults.headers.common[
-            //     'Authorization'
-            // ] = `Bearer ${action.payload.jwttoken}`;
             localStorage.auth = JSON.stringify(newState)
             return newState;
         case AuthActionType.LOGIN_SUCCESS:
             const loginAuthState = {
                 user: action.payload
             }
-            // axios.defaults.headers.common[
-            //     'Authorization'
-            // ] = `Bearer ${action.payload.jwttoken}`;
             localStorage.auth = JSON.stringify(loginAuthState)
             window.location.reload(true);
             return loginAuthState;
@@ -37,10 +31,6 @@ const authreducer = (state = authState, action) => {
             const logoutState = {
                 user: action.payload
             }
-            // axios.defaults.headers.common[
-            //     'Authorization'
-            // ] = `Bearer ${action.payload.jwttoken}`;
-            
             localStorage.auth = JSON.stringify(logoutState)
             window.location.reload(true);
             return logoutState;

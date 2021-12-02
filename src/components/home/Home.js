@@ -5,6 +5,7 @@ import "./home.scss";
 import Table from "../table/Table";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DashBoard from "./dashboard/DashBoard";
+import Products from "./products/Products";
 function Home() {
   return (
     <div className="home">
@@ -13,7 +14,7 @@ function Home() {
         <Header />
         <Routes>
           <Route exact path="/" element={<DashBoard />} />
-          <Route exact path="/products" element={<Table />} />
+          <Route exact path="/products" element={<Products />} />
         </Routes>
       </div>
     </div>

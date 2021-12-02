@@ -1,4 +1,5 @@
 import { ProductActionType } from "../action/ProductAction";
+import {useCallbacks} from "react"
 
 const initProduct = {
   posts: [
@@ -7,13 +8,13 @@ const initProduct = {
       image: "",
       description: "",
       price: "",
-      sale: "",
+      sale: "hihi",
     },
   ],
 };
 
 const productreducer = (state = initProduct, action) => {
-  console.log("hello i am product reduver", action.payload);
+  console.log("hello i am product reduver", action);
   switch (action.type) {
     case ProductActionType.GETALL_PRODUCTS:
       return action.payload;

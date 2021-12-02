@@ -1,0 +1,21 @@
+.table{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.pages{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-right: 30px;
+    &-item{
+        cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 1000%;
+        
+    }
+}
+
+.active{
+    background-color: rgb(0, 247, 255);
+}

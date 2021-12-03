@@ -26,7 +26,7 @@ ChartJS.register(
 );
 
 const topCustomers = {
-  head: ["User", "total order", "total spending"],
+  head: ["", "User", "total order", "total spending"],
   body: [
     {
       username: "john doe",
@@ -68,7 +68,7 @@ const renderBodyCustomer = (item, index) => (
 );
 
 const latestOrders = {
-  head: ["order id", "user", "total price", "date", "status"],
+  head: ["", "order id", "user", "total price", "date", "status"],
   body: [
     {
         ind:"1",
@@ -292,7 +292,7 @@ const renderBodyOrder = (item, index) => (
     <td>{item.user}</td>
     <td>{item.date}</td>
     <td>{item.price}</td>
-    <td>{item.status}</td>
+    <td style={{color: `${orderStatus[item.status]}`}}>{item.status}</td>
   </tr>
 );
 function DashBoard() {
@@ -368,7 +368,7 @@ function DashBoard() {
       </div>
       <div className="dashboard-row2">
         <div className="dashboard-row2-topfood">
-          <span>Top customer</span>
+          <div className="title">Top customer</div>
           <Table2
             dataHeader={topCustomers.head}
             renderHeader={(item, index) => renderHeaderCustomer(item, index)}
@@ -377,7 +377,7 @@ function DashBoard() {
           />
         </div>
         <div className="dashboard-row2-orders">
-          <span>Top order</span>
+          <div className="title">Top order</div>
           <Table2
             limit={10}
             dataHeader={latestOrders.head}

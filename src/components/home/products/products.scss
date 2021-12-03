@@ -1,0 +1,18 @@
+.btn-create{
+    margin: 15px 0 5px 0;
+}
+
+.handle{
+    display: flex;
+    gap: 10px;
+    & > div > .bx-edit-alt {
+        color: #fdbd10;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    & > div > .bx-trash {
+        color: #ec1c24;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}

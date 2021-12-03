@@ -1,5 +1,10 @@
 .header{
-    background-color: aqua;
+    &-name{
+        font-weight: bold;
+        font-size: 24px;
+        color: #fff;
+    }
+    background-color:#ec1c24;
     height: 10vh;
     width: 100%;
     display: flex;
@@ -16,10 +21,13 @@
         display: flex;
         align-items: center;
         cursor: pointer;
-        gap: 10px;
         & > img {
-            height: 30px;
-            width: 30px;
+            height: 36px;
+            width: 36px;
+        }
+        &-name{
+            font-size: 24px;
+            color:rgb(255, 255, 255);
         }
         & > i{
             font-size: 28px;
@@ -33,6 +41,7 @@
 .dropdown{
     display: none;
     position: absolute;
+    
     top: 6vh;
     right: 0;
     z-index: 100;
@@ -51,6 +60,8 @@
     & > ul {
         padding: 20px 30px 20px 30px;
         background-color: rgb(255, 255, 255);
+        box-shadow: 5px 5px 10px 7px rgba(66, 66, 66, 0.103);
+        border-radius: 5px;
         & > * ~ * {
             margin-top: 15px;
         }
@@ -58,15 +69,17 @@
     & > ul > li {
         cursor: pointer;
         font-size: 18px;
+        color: black;
         & > i {
             margin-right: 10px;
         }
+        transition: color 0s ease-in-out;
         &:hover{
-            color: rgb(22, 224, 231);
+            color: #ed7902;
         }
+    }
+    &.active{
+        display: unset;
     }
 }
 
-.active{
-    display: unset;
-}

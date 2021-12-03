@@ -6,6 +6,7 @@ import {
 } from "../../../redux/action/ProductAction";
 import Modal from "../../modal/Modal";
 import Table2 from "../../table2/Table2";
+import './products.scss'
 
 const initState = {
   name: "",
@@ -52,16 +53,22 @@ function Products(props) {
       <td>{item.image}</td>
       <td>{item.price}</td>
       <td>{item.sale}</td>
-      <td>
-        <button onClick={() => editHandle(item)}>Edit</button>
-        <button onClick={() => deleteHandle(item)}>Delete</button>
+      <td >
+        <div className="handle">
+          <div onClick={() => editHandle(item)}>
+          <i className="bx bx-edit-alt"></i>
+        </div>
+        <div onClick={() => deleteHandle(item)}>
+          <i className="bx bx-trash"></i>
+        </div>
+        </div>
+        
       </td>
     </tr>
   );
   return (
     <div className="products">
-      <button onClick={() => getall(data.token)}>huhu</button>
-      <button onClick={() => handleCreate()}>Create</button>
+      <button className="btn btn-create"onClick={() => handleCreate()}>Create</button>
       <Table2
         key={Math.floor(Math.random() * 10000000)}
         limit={10}

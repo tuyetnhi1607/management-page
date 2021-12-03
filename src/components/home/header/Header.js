@@ -47,11 +47,8 @@ function Header(props) {
       <div className="header">
         <div className="header-name">{name}</div>
         <div ref={ref} className="header-account" onClick={handleDropdown}>
-          <i className='bx bxs-bell-ring'></i>
           <img src={avatar} alt="" />
-          <div>{user.data.userName}</div>
-          {/* <i className='bx bxs-bell-ring'></i>
-          <i className='bx bx-palette'></i> */}
+          <div className="header-account-name">{user.data.userName}</div>
         </div>
       </div>
       <div className="dropdown" id="dropdown">

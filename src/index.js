@@ -8,7 +8,7 @@ import store from './redux/store'
 import axios from "axios";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-axios.defaults.baseURL = "  https://tuyetnhi1607-backend-cms.herokuapp.com/api/v1";
+axios.defaults.baseURL = "https://tuyetnhi1607-backend-cms.herokuapp.com/api/v1";
 
 ReactDOM.render(
   <React.StrictMode>

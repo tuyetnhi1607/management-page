@@ -7,7 +7,7 @@ function Register(props) {
   const { register } = props;
   const history = useNavigate();
   const [registerState, setRegisterState] = useState({});
-  console.log("register", registerState)
+  console.log("register", registerState);
   return (
     <div className="register">
       <form
@@ -16,6 +16,7 @@ function Register(props) {
           register(registerState, history);
         }}
       >
+        <h1>Register Form</h1>
         <input
           type="text"
           placeholder="name"
@@ -46,8 +47,8 @@ function Register(props) {
   );
 }
 const mapStateToProps = (state) => {
-    return {};
-  };
+  return {};
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {

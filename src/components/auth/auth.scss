@@ -1,7 +1,44 @@
-.register{
-    
-}
 
-.login{
-    
+.login, .register{
+    background-color: #0066b2;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    & > form{
+        border-radius: 20px;
+        margin-top: 100px;
+        width: 500px;
+        background-color: rgb(255, 255, 255);
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+        & > h1{
+            margin-bottom: 50px;
+            color: #0066b2;
+        }
+        & > input{
+            border: none;
+            height: 50px;
+            outline: none;
+            background-color: #49a4e985;
+            border-radius: 10px;
+            font-size: 24px;
+            padding-left: 20px;
+            color: rgb(105, 105, 105);
+            margin-bottom: 20px;
+        }
+        & > button{
+            border: none;
+            background-color: #3e96da;
+            padding: 15px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+    }
 }

@@ -9,11 +9,11 @@
     overflow: hidden;
     background-color: rgba(0,0,0,0.4);
     &-main{
-        background-color: aqua;
+        background-color: #fff;
         margin: 15% auto;
         padding: 20px;
         border: 1px solid #ebee;
-        width: 80%;
+        width: 700px;
         &-header{
             cursor: pointer;
             text-align: right;
@@ -21,6 +21,44 @@
                 color: rgb(255, 0, 0);
                 font-size: 36px;
             }
+        }
+    }
+    &-body{
+        &-item{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            & > div{
+                width: 150px;
+                display: inline-block;
+                text-align: left;
+                font-size: 20px;
+                color:rgb(63, 63, 63);
+
+            }
+            & > input{
+                border: none;
+                height: 50px;
+                outline: none;
+                background-color: #acecff;
+                border-radius: 10px;
+                font-size: 20px;
+                padding-left: 20px;
+                color: rgb(105, 105, 105);
+                margin-bottom: 20px;
+            }
+            
+        }
+        & > button{
+            border: none;
+            background-color: #3e96da;
+            padding: 15px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 15px;
         }
     }
 }

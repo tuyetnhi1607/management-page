@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { loginAuthAction } from "../../redux/action/AuthAction";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import "./auth.scss";
 
 function Login(props) {
   const { login } = props;
@@ -18,6 +19,8 @@ function Login(props) {
         }}
         className="login-form"
       >
+        {" "}
+        <h1>Login Form</h1>
         <input
           type="text"
           placeholder="email"
@@ -35,10 +38,13 @@ function Login(props) {
           }}
         />
         <button type="submit">Submit</button>
+        <span style={{fontSize: "20px", color: "rgb(105, 105, 105)"}}>
+          Create a account:{" "}
+          <Link to="/register">
+            <span style={{color: "blue", cursor: "pointer"}}>Register</span>
+          </Link>
+        </span>
       </form>
-      <Link to="/register">
-        <button>Register</button>
-      </Link>
     </div>
   );
 }

@@ -20,18 +20,17 @@ function Modal(props) {
   const [editState, setEditState] = useState(initState);
   console.log("stateee", state, editState);
   useEffect(() => {
-    console.log("set lai state moi ne!!!")
+    console.log("set lai state moi ne!!!");
     setEditState(state);
   }, [state]);
 
   const close = () => {
     document.getElementById("modal").style.display = "none";
-
   };
   const { token } = JSON.parse(localStorage.auth).user.data;
   const handle = () => {
-    if(type === "EDIT") edit(editState, token)
-    else create(editState, token)
+    if (type === "EDIT") edit(editState, token);
+    else create(editState, token);
     close();
   };
 
@@ -42,18 +41,27 @@ function Modal(props) {
           <i className="bx bxs-x-square"></i>
         </div>
         <div className="modal-body">
+          <div className="modal-body-item">
+            <div>Name: </div>
             <input
+              placeholder="Name"
               value={editState.name}
               type="text"
               onChange={(e) => {
-                console.log("target", e.target)
+                console.log("target", e.target);
                 const name = e.target.value;
                 setEditState((editState) => {
                   return { ...editState, name: name };
                 });
               }}
             />
+          </div>
+
+          <div className="modal-body-item">
+            {" "}
+            <div>Description: </div>
             <input
+              placeholder="Description"
               value={editState.description}
               type="text"
               onChange={(e) => {
@@ -63,7 +71,11 @@ function Modal(props) {
                 });
               }}
             />
+          </div>
+          <div className="modal-body-item">
+            <div>Image: </div>
             <input
+              placeholder='Image'
               value={editState.image}
               type="text"
               onChange={(e) => {
@@ -73,7 +85,11 @@ function Modal(props) {
                 });
               }}
             />
+          </div>
+          <div className="modal-body-item">
+            <div>Price: </div>
             <input
+              placeholder="Price"
               value={editState.price}
               type="text"
               onChange={(e) => {
@@ -83,7 +99,11 @@ function Modal(props) {
                 });
               }}
             />
+          </div>
+          <div className="modal-body-item">
+            <div>Sale: </div>
             <input
+              placeholder="Sale"
               value={editState.sale}
               type="text"
               onChange={(e) => {
@@ -93,9 +113,7 @@ function Modal(props) {
                 });
               }}
             />
-      
-        </div>
-        <div className="modal-footer">
+          </div>
           <button type="submit" onClick={() => handle()}>
             Submit
           </button>

@@ -140,7 +140,9 @@ const renderBodyOrder = (item, index) => (
     <td>{item.user}</td>
     <td>{item.date}</td>
     <td>{item.price}</td>
-    <td style={{ color: `${orderStatus[item.status]}` }}>{item.status}</td>
+    <td style={{ color: `${orderStatus[item.status]}` }}>
+      <div style={{backgroundColor: `${orderStatus[item.status]}`, borderRadius:'10px', color: 'white', width:'100px', padding: '5px'}}>{item.status}</div>
+    </td>
   </tr>
 );
 function DashBoard() {
@@ -152,31 +154,31 @@ function DashBoard() {
             <Card
               value="1.995"
               icon="bx-cart"
-              title="Toral order"
+              title="Toral orders"
               color="#38d996"
             />
           </div>
           <div className="dashboard-row1-card-item">
             <Card
-              value="1.995"
+              value="2.656"
               icon="bx-shopping-bag"
-              title="Toral order"
+              title="Toral products"
               color="#fc6481"
             />
           </div>
           <div className="dashboard-row1-card-item">
             <Card
-              value="1.995"
+              value="124.345 $"
               icon="bx-money"
-              title="Toral order"
+              title="Toral proceeds"
               color="#d36ec6"
             />
           </div>
           <div className="dashboard-row1-card-item">
             <Card
-              value="1.995"
+              value="546"
               icon="bx-file-blank"
-              title="Toral order"
+              title="Toral customers"
               color="#9085da"
             />
           </div>
@@ -185,36 +187,36 @@ function DashBoard() {
           <Line
             data={{
               labels: [
-                1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050,
+                'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'
               ],
               datasets: [
                 {
-                  data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
-                  label: "Africa",
+                  data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478, 2584, 3190],
+                  label: "Humburger",
                   borderColor: "#3e95cd",
                   fill: false,
                 },
                 {
-                  data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
-                  label: "Asia",
+                  data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 4038, 5384, 7239],
+                  label: "Pizza",
                   borderColor: "#8e5ea2",
                   fill: false,
                 },
                 {
-                  data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
-                  label: "Europe",
+                  data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734, 856, 903],
+                  label: "Cream Vanila",
                   borderColor: "#3cba9f",
                   fill: false,
                 },
                 {
-                  data: [40, 20, 10, 16, 24, 38, 74, 167, 508, 784],
-                  label: "Latin America",
+                  data: [40, 20, 10, 16, 24, 38, 74, 167, 508, 784, 847, 926],
+                  label: "Chicken",
                   borderColor: "#e8c3b9",
                   fill: false,
                 },
                 {
-                  data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433],
-                  label: "North America",
+                  data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433, 574, 1725],
+                  label: "Hotdogs",
                   borderColor: "#c45850",
                   fill: false,
                 },
@@ -223,7 +225,7 @@ function DashBoard() {
             options={{
               title: {
                 display: true,
-                text: "World population per region (in millions)",
+                text: "",
               },
               legend: {
                 display: true,

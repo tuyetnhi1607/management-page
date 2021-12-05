@@ -62,13 +62,13 @@ function Products(props) {
           <i className="bx bx-trash"></i>
         </div>
         </div>
-        
       </td>
     </tr>
   );
   return (
     <div className="products">
       <button className="btn btn-create"onClick={() => handleCreate()}>Create</button>
+      <div className="title">List Products</div>
       <Table2
         key={Math.floor(Math.random() * 10000000)}
         limit={10}

@@ -38,9 +38,12 @@ a{
   font-size: 20px;
   border-radius: 5px;
   color: #ffffff;
-  background-color: #fdbd10;
+  background-color: #037edb;
+  font-weight: bold;
   
 }
 .btn:hover{
-    background-color: #ffd76a;
+    /* background-color: #38d9967a; */
+    box-shadow: 5px 5px 10px 5px #1c9dff3f,  -5px -5px 10px 5px #1b9cff3f;
+
   }

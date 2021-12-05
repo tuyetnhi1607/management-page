@@ -43,14 +43,15 @@ function Header(props) {
   const { logout } = props;
 
   return (
-    <>
-      <div className="header">
-        <div className="header-name">{name}</div>
-        <div ref={ref} className="header-account">
+    <div className="header">
+      {/* <div className="header-left">Search</div> */}
+      <div className="header-right">
+        <div className="header-right-name">{name}</div>
+        <div ref={ref} className="header-right-account">
           <i class="bx bxs-bell-ring">
             <div className="bell-badge">6</div>
           </i>
-          <div className="header-account-name" onClick={handleDropdown}>
+          <div className="header-right-account-name" onClick={handleDropdown}>
             <img src={avatar} alt="" />
             {user.data.userName}
             <i class="bx bxs-down-arrow"></i>
@@ -78,7 +79,7 @@ function Header(props) {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 }
 

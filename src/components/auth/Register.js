@@ -34,8 +34,8 @@ function Register(props) {
           }}
         />
         <input
-          type="text"
-          placeholder="pass"
+          type="password"
+          placeholder="password"
           onChange={(e) => {
             const password = e.target.value;
             setRegisterState({ ...registerState, ...{ password } });

@@ -53,6 +53,11 @@ const topCustomers = {
       order: "80",
       price: "$8,840",
     },
+    {
+      username: "anthony baker",
+      order: "120",
+      price: "$10,840",
+    },
   ],
 };
 
@@ -68,10 +73,10 @@ const renderBodyCustomer = (item, index) => (
 );
 
 const latestOrders = {
-  head: ["", "order id", "user", "total price", "date", "status"],
+  head: ["", "order id", "user",  "date","total price", "status"],
   body: [
     {
-        ind:"1",
+      ind: "1",
       id: "#OD1711",
       user: "john doe",
       date: "17 Jun 2021",
@@ -79,7 +84,7 @@ const latestOrders = {
       status: "shipping",
     },
     {
-        ind:"2",
+      ind: "2",
       id: "#OD1712",
       user: "frank iva",
       date: "1 Jun 2021",
@@ -87,7 +92,7 @@ const latestOrders = {
       status: "paid",
     },
     {
-        ind:"3",
+      ind: "3",
       id: "#OD1712",
       user: "frank iva",
       date: "1 Jun 2021",
@@ -95,7 +100,7 @@ const latestOrders = {
       status: "paid",
     },
     {
-        ind:"4",
+      ind: "4",
       id: "#OD1713",
       user: "anthony baker",
       date: "27 Jun 2021",
@@ -103,7 +108,7 @@ const latestOrders = {
       status: "pending",
     },
     {
-        ind:"5",
+      ind: "5",
       id: "#OD1712",
       user: "frank iva",
       date: "1 Jun 2021",
@@ -111,170 +116,13 @@ const latestOrders = {
       status: "paid",
     },
     {
-        ind:"6",
+      ind: "6",
       id: "#OD1713",
       user: "anthony baker",
       date: "27 Jun 2021",
       price: "$200",
       status: "refund",
-    },
-    {
-        ind:"7",
-      id: "#OD1711",
-      user: "john doe",
-      date: "17 Jun 2021",
-      price: "$900",
-      status: "shipping",
-    },
-
-    {
-        ind:"8",
-      id: "#OD1713",
-      user: "anthony baker",
-      date: "27 Jun 2021",
-      price: "$200",
-      status: "pending",
-    },
-    {
-        ind:"9",
-      id: "#OD1713",
-      user: "anthony baker",
-      date: "27 Jun 2021",
-      price: "$200",
-      status: "refund",
-    },
-    {
-        ind:"10",
-      id: "#OD1712",
-      user: "frank iva",
-      date: "1 Jun 2021",
-      price: "$400",
-      status: "paid",
-    },
-
-    {
-        ind:"11",
-      id: "#OD1711",
-      user: "john doe",
-      date: "17 Jun 2021",
-      price: "$900",
-      status: "shipping",
-    },
-
-    {
-        ind:"12",
-      id: "#OD1713",
-      user: "anthony baker",
-      date: "27 Jun 2021",
-      price: "$200",
-      status: "pending",
-    },
-    {
-        ind:"13",
-      id: "#OD1712",
-      user: "frank iva",
-      date: "1 Jun 2021",
-      price: "$400",
-      status: "paid",
-    },
-    {
-        ind:"14",
-      id: "#OD1712",
-      user: "frank iva",
-      date: "1 Jun 2021",
-      price: "$400",
-      status: "paid",
-    },
-
-    {
-        ind:"15",
-      id: "#OD1711",
-      user: "john doe",
-      date: "17 Jun 2021",
-      price: "$900",
-      status: "shipping",
-    },
-    {
-        ind:"16",
-      id: "#OD1713",
-      user: "anthony baker",
-      date: "27 Jun 2021",
-      price: "$200",
-      status: "refund",
-    },
-    {
-        ind:"17",
-      id: "#OD1712",
-      user: "frank iva",
-      date: "1 Jun 2021",
-      price: "$400",
-      status: "paid",
-    },
-    {
-        ind:"18",
-      id: "#OD1713",
-      user: "anthony baker",
-      date: "27 Jun 2021",
-      price: "$200",
-      status: "pending",
-    },
-    {
-        ind:"19",
-      id: "#OD1712",
-      user: "frank iva",
-      date: "1 Jun 2021",
-      price: "$400",
-      status: "paid",
-    },
-    {
-        ind:"20",
-      id: "#OD1711",
-      user: "john doe",
-      date: "17 Jun 2021",
-      price: "$900",
-      status: "shipping",
-    },
-    {
-        ind:"21",
-      id: "#OD1713",
-      user: "anthony baker",
-      date: "27 Jun 2021",
-      price: "$200",
-      status: "refund",
-    },
-
-    {
-        ind:"22",
-      id: "#OD1712",
-      user: "frank iva",
-      date: "1 Jun 2021",
-      price: "$400",
-      status: "paid",
-    },
-    {
-        ind:"23",
-      id: "#OD1713",
-      user: "anthony baker",
-      date: "27 Jun 2021",
-      price: "$200",
-      status: "pending",
-    },
-    {
-        ind:"24",
-      id: "#OD1712",
-      user: "frank iva",
-      date: "1 Jun 2021",
-      price: "$400",
-      status: "paid",
-    },
-    {
-        ind:"25",
-      id: "#OD1713",
-      user: "anthony baker",
-      date: "27 Jun 2021",
-      price: "$200",
-      status: "refund",
-    },
+    }
   ],
 };
 const orderStatus = {
@@ -292,7 +140,7 @@ const renderBodyOrder = (item, index) => (
     <td>{item.user}</td>
     <td>{item.date}</td>
     <td>{item.price}</td>
-    <td style={{color: `${orderStatus[item.status]}`}}>{item.status}</td>
+    <td style={{ color: `${orderStatus[item.status]}` }}>{item.status}</td>
   </tr>
 );
 function DashBoard() {
@@ -300,17 +148,37 @@ function DashBoard() {
     <div className="dashboard">
       <div className="dashboard-row1">
         <div className="dashboard-row1-card">
-          <div className="dashboard-row1-card-1">
-            <Card value="1.995" icon="bx-cart" title="Toral order" />
+          <div className="dashboard-row1-card-item">
+            <Card
+              value="1.995"
+              icon="bx-cart"
+              title="Toral order"
+              color="#38d996"
+            />
           </div>
-          <div className="dashboard-row1-card-2">
-            <Card value="1.995" icon="bx-shopping-bag" title="Toral order" />
+          <div className="dashboard-row1-card-item">
+            <Card
+              value="1.995"
+              icon="bx-shopping-bag"
+              title="Toral order"
+              color="#fc6481"
+            />
           </div>
-          <div className="dashboard-row1-card-3">
-            <Card value="1.995" icon="bx-money" title="Toral order" />
+          <div className="dashboard-row1-card-item">
+            <Card
+              value="1.995"
+              icon="bx-money"
+              title="Toral order"
+              color="#d36ec6"
+            />
           </div>
-          <div className="dashboard-row1-card-4">
-            <Card value="1.995" icon="bx-file-blank" title="Toral order" />
+          <div className="dashboard-row1-card-item">
+            <Card
+              value="1.995"
+              icon="bx-file-blank"
+              title="Toral order"
+              color="#9085da"
+            />
           </div>
         </div>
         <div className="dashboard-row1-chart">

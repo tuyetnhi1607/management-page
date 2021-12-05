@@ -29,7 +29,9 @@ function Table2(props) {
     <div className="table">
       <table>
         <thead>
-          {dataHeader.map((item, index) => renderHeader(item, index))}
+          <tr>
+            {dataHeader.map((item, index) => renderHeader(item, index))}
+          </tr>
         </thead>
         <tbody>{data.map((item, index) => renderBody(item, index))}</tbody>
       </table>

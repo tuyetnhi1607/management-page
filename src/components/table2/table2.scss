@@ -33,6 +33,12 @@ $padding: 10px;
 table {
     width: 100%;
     
+    thead tr th{
+        font-size: 18px;
+        font-weight: bold;
+        background-color: lighten($baseColor, 40%);
+    }
+
     td, th { 
        color: darken($baseColor, 10%);
        padding: $padding; 
@@ -42,24 +48,25 @@ table {
     td {
        text-align: center;
        vertical-align: middle;
-       
+       font-size: 1.1rem;
        &:last-child {
-          font-size: 0.95em;
-          line-height: 1.4;
-          text-align: left;
+          font-weight: 400;
        }
-    }
-    
-    th { 
-       background-color: lighten($baseColor, 40%);
-       font-weight: 300;
-       text-align: center;
     }
     
     tr {     
         vertical-align: middle;
        &:nth-child(2n) { background-color: white; }
        &:nth-child(2n+1) { background-color: lighten($baseColor, 55%) }
+       cursor: pointer;
+    }
+    
+    tr:hover{
+        background-color: lighten($baseColor, 20%);
+        td{
+            color: white;
+        }
+        
     }
  }
  

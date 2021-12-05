@@ -46,9 +46,15 @@ function Header(props) {
     <>
       <div className="header">
         <div className="header-name">{name}</div>
-        <div ref={ref} className="header-account" onClick={handleDropdown}>
-          <img src={avatar} alt="" />
-          <div className="header-account-name">{user.data.userName}</div>
+        <div ref={ref} className="header-account">
+          <i class="bx bxs-bell-ring">
+            <div className="bell-badge">6</div>
+          </i>
+          <div className="header-account-name" onClick={handleDropdown}>
+            <img src={avatar} alt="" />
+            {user.data.userName}
+            <i class="bx bxs-down-arrow"></i>
+          </div>
         </div>
       </div>
       <div className="dropdown" id="dropdown">

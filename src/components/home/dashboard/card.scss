@@ -7,15 +7,23 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 3rem;
     z-index: 1;
     overflow: hidden;
     box-shadow: 5px 5px 10px 7px rgba(66, 66, 66, 0.103);
     gap: 1rem;
-    & > i {
-        font-size: 60px;
-        z-index: 1;
+    .icon{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > i {
+            color:rgb(255, 255, 255);
+            font-size: 60px;
+            z-index: 1;
+        }
     }
+    
     &-content{
         z-index: 1;
         flex: 1;
@@ -30,14 +38,9 @@
 .card::before {
     content: "";
     width: 100%;
-    z-index: 0;
+    z-index: -1;
     padding-top: 100%;
     border-radius: 50%;
-    background-image: linear-gradient(
-    to top right,
-    #fdbd10,
-    #fdbd10
-    );
     position: absolute;
     left: -50%;
     top: 0;

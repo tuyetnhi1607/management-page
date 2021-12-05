@@ -47,7 +47,7 @@ function Products(props) {
   const dataBody = [...product.posts].reverse();
   const renderBody = (item, index) => (
     <tr key={index}>
-      <td>{item._id}</td>
+      <td>{index+1}</td>
       <td>{item.name}</td>
       <td>{item.description}</td>
       <td>{item.image}</td>
